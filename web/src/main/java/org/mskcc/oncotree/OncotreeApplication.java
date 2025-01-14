@@ -55,6 +55,16 @@ public class OncotreeApplication extends SpringBootServletInitializer {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**");
             }
+
+            @Override
+            public void addViewControllers(ViewControllerRegistry registry) {
+                registry.addViewController("/news")
+                    .setViewName("forward:/index.html");
+                registry.addViewController("/mapping")
+                    .setViewName("forward:/index.html");
+                registry.addViewController("/about")
+                    .setViewName("forward:/index.html");
+            }
         };
     }
 
